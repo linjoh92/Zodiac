@@ -7,10 +7,7 @@ export default function Layout() {
     <>
       <Header />
       <Outlet />
-      <Footer
-        title="@ Copywrite 2023 Linn"
-        subtitle="Assigment Two - Webb- och mobilapplikationsutveckling - USE Typescrpit - Tailwind - Connect to API"
-      />
+      <Footer />
     </>
   )
 }

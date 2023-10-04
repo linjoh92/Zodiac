@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import DateRanges from '../ZodiacInfo/dateRanges'
 import ZodiacSigns from '../ZodiacInfo/zodiacSigns'
 import ZodiacImg from '../ZodiacImg'
+import Heading from '../Heading'
 
 interface ZodiacData {
   week: string
@@ -57,14 +58,10 @@ export default function Zodiac() {
 
   return (
     <div className="flex flex-col justify-start w-full pt-10 p-4 font-titillium font-semibold text-black items-center">
-      <div className="text-center">
-        <h1 className="text-3xl md:text-5xl md:mt-16 font-extrabold tracking-widest uppercase">
-          Weekly horoscope
-        </h1>
-        <h2 className="mb-10 mt-2">
-          Select your zodiac sign to get your horoscoope of the week
-        </h2>
-      </div>
+      <Heading
+        rubrik="Weekly horoscope"
+        subtitle="Select your zodiac sign to get your horoscoope of the week"
+      />
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-3xl">
         {ZodiacSigns.map((zodiac) => {
           const dateRange = DateRanges[zodiac.name]

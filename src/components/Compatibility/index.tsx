@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import DropDown from '../DropDown'
 import ZodiacImg from '../ZodiacImg'
 import { HeartIcon } from '@heroicons/react/24/solid'
+import Heading from '../Heading'
 
 interface CompatibilityData {
   header: string
@@ -54,11 +55,11 @@ export default function Compatibility() {
   }, [selectedZodiacOne, selectedZodiacTwo])
 
   return (
-    <div className="flex flex-col justify-start w-full pt-10 p-4 font-titillium font-semibold text-black items-center">
-      <h1 className="text-3xl md:text-5xl md:mt-16 font-extrabold text-center tracking-widest uppercase">
-        Let's try your compatibility
-      </h1>
-      <h2 className="mb-10 mt-2">Choose two zodiac</h2>
+    <div className="flex flex-col justify-start w-full pt-10 p-4 font-titillium items-center">
+      <Heading
+        rubrik="Let's try your compatibility"
+        subtitle="Choose two zodiac"
+      />
       <form
         className="flex flex-col"
         onSubmit={(e) => {

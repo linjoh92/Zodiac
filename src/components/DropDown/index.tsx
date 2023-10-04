@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import ZodiacSigns from '../ZodiacInfo/zodiacSigns'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
-interface DropDownProps {
+type DropDownProps = {
   value: string | null
   onChange: (zodiacName: string) => void
 }
@@ -26,20 +27,9 @@ function DropDown({ value, onChange }: DropDownProps) {
         ${value ? 'bg-accentText/60 text-white' : 'bg-white/20'}`}
       >
         {value || 'Select zodiac'}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
+        <ChevronDownIcon
           className={`h-5 w-5 ${value ? ' text-white' : 'text-baseText'}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        />
       </button>
       {isOpen && (
         <div className="mt-2 w-40 h-fit absolute rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
