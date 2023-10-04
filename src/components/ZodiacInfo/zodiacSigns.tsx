@@ -60,8 +60,6 @@ const ZodiacSigns = [
     name: 'pisces',
     image: PiscesImg,
   },
-];
-  
-  export default ZodiacSigns; 
+]
 
-
+export default ZodiacSigns

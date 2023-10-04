@@ -1,9 +1,8 @@
 type LogoProps = {
-  className: string; // Accept a class name as a prop
-};
+  className: string // Accept a class name as a prop
+}
 
-export default function Logo({className}:LogoProps) {
-
+export default function Logo({ className }: LogoProps) {
   return (
     <svg
       className={className} // Apply the className to the SVG
@@ -327,4 +326,3 @@ export default function Logo({className}:LogoProps) {
     </svg>
   )
 }
-

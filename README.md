@@ -2,7 +2,6 @@
 
 School assignment course Webb- och mobile applications development. Create a web page - Use Typescript , Tailwind and connect to a API
 
-
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

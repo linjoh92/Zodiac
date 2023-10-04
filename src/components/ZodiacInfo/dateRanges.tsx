@@ -11,7 +11,6 @@ const DateRanges: Record<string, string> = {
   capricorn: '22/12 - 19/1',
   aquarius: '20/1 - 18/2',
   pisces: '19/2 - 20/3',
-};
+}
 
-export default DateRanges;
-
+export default DateRanges
