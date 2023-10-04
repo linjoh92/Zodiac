@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import ZodiacSigns from '../ZodiacInfo/zodiacSigns';
+import { useState } from 'react'
+import ZodiacSigns from '../ZodiacInfo/zodiacSigns'
 
 interface DropDownProps {
-  value: string | null;
-  onChange: (zodiacName: string) => void;
+  value: string | null
+  onChange: (zodiacName: string) => void
 }
 
 function DropDown({ value, onChange }: DropDownProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   const handleOptionClick = (zodiacName: string) => {
-    onChange(zodiacName);
-    toggleDropdown();
-  };
+    onChange(zodiacName)
+    toggleDropdown()
+  }
 
   return (
     <div className="relative inline-block text-left">
@@ -61,7 +61,7 @@ function DropDown({ value, onChange }: DropDownProps) {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default DropDown;
+export default DropDown
