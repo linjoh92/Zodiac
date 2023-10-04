@@ -71,7 +71,7 @@ export default function Zodiac() {
           return (
             <button
               key={zodiac.name}
-              className={`uppercase font-bold tracking-widest text-sm border-2 border-accentText px-4 py-2 rounded-3xl hover:bg-accentText/40 hover:text-white ${
+              className={`uppercase font-bold tracking-widest text-sm border-2 border-accentText px-4 py-2 rounded-3xl sm:hover:bg-accentText/40 sm:hover:text-white ${
                 selectedZodiac === zodiac.name
                   ? ' text-white bg-accentText'
                   : 'text-baseText bg-white/20'

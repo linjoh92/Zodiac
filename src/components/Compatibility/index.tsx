@@ -58,7 +58,7 @@ export default function Compatibility() {
       <h1 className="text-3xl md:text-5xl md:mt-16 font-extrabold text-center tracking-widest uppercase">
         Let's try your compatibility
       </h1>
-      <h2 className="mb-10 mt-2">Choose two zodiac:</h2>
+      <h2 className="mb-10 mt-2">Choose two zodiac</h2>
       <form
         className="flex flex-col"
         onSubmit={(e) => {
@@ -90,7 +90,7 @@ export default function Compatibility() {
             {compatibilityData.map((data, index) => (
               <div key={index} className="flex flex-col mb-10 px-2 md:p-0">
                 <h4 className="font-bold">{data.header}</h4>
-                <p>{data.text}</p>
+                <p className="font-medium">{data.text}</p>
               </div>
             ))}
           </div>

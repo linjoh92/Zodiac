@@ -8,7 +8,7 @@ export default function Navbar() {
     <div className="flex text-accentText justify-center gap-5 font-titillium text-base tracking-wider">
       <NavLink
         to="/zodiac"
-        className={`flex justify-center  hover:text-accentText/50 ${
+        className={`flex justify-center  sm:hover:text-accentText/50 ${
           location.pathname === '/zodiac' ? 'font-extrabold' : 'font-semibold'
         }`}
       >
@@ -16,7 +16,7 @@ export default function Navbar() {
       </NavLink>
       <NavLink
         to="/compatibility"
-        className={`flex justify-center hover:text-accentText/50 ${
+        className={`flex justify-center sm:hover:text-accentText/50 ${
           location.pathname === '/compatibility'
             ? 'font-extrabold'
             : 'font-semibold'
@@ -26,7 +26,7 @@ export default function Navbar() {
       </NavLink>
       <NavLink
         to="/horoscope"
-        className={`flex justify-center  hover:text-accentText/50 ${
+        className={`flex justify-center  sm:hover:text-accentText/50 ${
           location.pathname === '/horoscope'
             ? 'font-extrabold'
             : 'font-semibold'
