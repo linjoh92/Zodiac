@@ -26,7 +26,14 @@ export default function DropDown({ value, onChange }: DropDownProps) {
           />
         </Menu.Button>
       </div>
-      <Transition as={Fragment}>
+      <Transition as={Fragment}
+          enter="transition duration-100 ease-out"
+          enterFrom="transform scale-95 opacity-0"
+          enterTo="transform scale-100 opacity-100"
+          leave="transition duration-75 ease-out"
+          leaveFrom="transform scale-100 opacity-100"
+          leaveTo="transform scale-95 opacity-0"
+        >
         <Menu.Items className="mt-2 w-40 h-fit rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
           <div className="py-2">
             {ZodiacSigns.map((zodiac) => {
