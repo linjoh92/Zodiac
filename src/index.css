@@ -1,0 +1,35 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&family=Titillium+Web:wght@200;400;600;700;900&display=swap');
+
+
+@layer components {
+  .factBox {
+    border: theme('colors.accentText') 3px solid;
+    padding: 0.6rem;
+  }
+}
+
+html, #root {
+  min-height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  background-color: #F7DAD9;
+  background: rgb(250,205,195);
+}
+
+body, #root{
+  min-height: 100vh;
+}
+
+#root{
+  max-width: 1120px;
+  width: 100vw;
+}
+
+
+
