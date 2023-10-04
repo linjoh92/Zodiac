@@ -27,7 +27,7 @@ export default function DropDown({ value, onChange }: DropDownProps) {
         </Menu.Button>
       </div>
       <Transition as={Fragment}>
-        <Menu.Items className="mt-2 w-40 rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
+        <Menu.Items className="mt-2 w-40 h-fit rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
           <div className="py-2">
             {ZodiacSigns.map((zodiac) => {
               return (
