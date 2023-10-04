@@ -55,7 +55,7 @@ export default function Compatibility() {
 
   return (
     <div className="flex flex-col justify-start w-full pt-10 p-4 font-titillium font-semibold text-black items-center">
-      <h1 className="text-3xl md:text-5xl md:mt-16 font-extrabold text-center px-20 tracking-widest uppercase">
+      <h1 className="text-3xl md:text-5xl md:mt-16 font-extrabold text-center tracking-widest uppercase">
         Let's try your compatibility
       </h1>
       <h2 className="mb-10 mt-2">Choose two zodiac:</h2>
@@ -66,7 +66,7 @@ export default function Compatibility() {
           fetchData()
         }}
       >
-        <div className="pb-8 flex gap-10 md:gap-24">
+        <div className="pb-8 flex gap-5 md:gap-24">
           <DropDown value={selectedZodiacOne} onChange={setSelectedZodiacOne} />
           <DropDown value={selectedZodiacTwo} onChange={setSelectedZodiacTwo} />
         </div>
@@ -78,17 +78,17 @@ export default function Compatibility() {
           <div>
             <div className="flex items-center justify-center">
               <ZodiacImg selectedZodiac={selectedZodiacOne} />
-              <HeartIcon className="w-8 m-2 text-accentText" />
+              <HeartIcon className="w-8 md:m-4 text-accentText" />
               <ZodiacImg selectedZodiac={selectedZodiacTwo} />
             </div>
             <h2 className="mt-5 text-5xl text-accentText font-extrabold tracking-widest uppercase text-center">
-              Compatibility
+              Match
             </h2>
             <h2 className="text-center capitalize text-base text-accentText font-bold mb-6">
               {selectedZodiacOne} & {selectedZodiacTwo}
             </h2>
             {compatibilityData.map((data, index) => (
-              <div key={index} className="flex flex-col mb-10">
+              <div key={index} className="flex flex-col mb-10 px-2 md:p-0">
                 <h4 className="font-bold">{data.header}</h4>
                 <p>{data.text}</p>
               </div>

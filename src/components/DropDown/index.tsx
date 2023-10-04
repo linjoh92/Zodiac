@@ -17,7 +17,7 @@ export default function DropDown({ value, onChange }: DropDownProps) {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button
-          className={`uppercase tracking-wider w-44 inline-flex items-center justify-between gap-x-1 rounded-3xl px-4 py-2 text-sm font-bold text-baseText shadow-sm ring-2 ring-accentText hover:bg-accentText/30 
+          className={`uppercase tracking-wider w-40 inline-flex items-center justify-between gap-x-1 rounded-3xl px-4 py-2 text-sm font-bold text-baseText shadow-sm ring-2 ring-accentText hover:bg-accentText/30 
         ${value ? 'bg-accentText/60 text-white' : 'bg-white/20'}`}
         >
           {value || 'Select zodiac'}
@@ -27,7 +27,7 @@ export default function DropDown({ value, onChange }: DropDownProps) {
         </Menu.Button>
       </div>
       <Transition as={Fragment}>
-        <Menu.Items className="absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
           <div className="py-2">
             {ZodiacSigns.map((zodiac) => {
               return (
