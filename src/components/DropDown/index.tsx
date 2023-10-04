@@ -1,66 +1,67 @@
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import ZodiacSigns from '../ZodiacInfo/zodiacSigns'
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
-}
+import { useState } from 'react';
+import ZodiacSigns from '../ZodiacInfo/zodiacSigns';
 
 interface DropDownProps {
-  value: string | null
-  onChange: (zodiacName: string) => void
+  value: string | null;
+  onChange: (zodiacName: string) => void;
 }
 
-export default function DropDown({ value, onChange }: DropDownProps) {
+function DropDown({ value, onChange }: DropDownProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClick = (zodiacName: string) => {
+    onChange(zodiacName);
+    toggleDropdown();
+  };
+
   return (
-    <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button
-          className={`uppercase tracking-wider w-40 inline-flex items-center justify-between gap-x-1 rounded-3xl px-4 py-2 text-sm font-bold text-baseText shadow-sm ring-2 ring-accentText hover:bg-accentText/30 
+    <div className="relative inline-block text-left">
+      <button
+        onClick={toggleDropdown}
+        className={`uppercase tracking-wider w-40 inline-flex items-center justify-between gap-x-1 rounded-3xl px-4 py-2 text-sm font-bold text-baseText shadow-sm ring-2 ring-accentText hover:bg-accentText/30 
         ${value ? 'bg-accentText/60 text-white' : 'bg-white/20'}`}
+      >
+        {value || 'Select zodiac'}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`h-5 w-5 ${value ? ' text-white' : 'text-baseText'}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          {value || 'Select zodiac'}
-          <ChevronDownIcon
-            className={`h-5 w-5 ${value ? ' text-white' : 'text-baseText'}`}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
           />
-        </Menu.Button>
-      </div>
-      <Transition as={Fragment}
-          enter="transition duration-100 ease-out"
-          enterFrom="transform scale-95 opacity-0"
-          enterTo="transform scale-100 opacity-100"
-          leave="transition duration-75 ease-out"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
-        >
-        <Menu.Items className="mt-2 w-40 h-fit rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="mt-2 w-40 h-fit absolute rounded-xl bg-white shadow-lg ring-1 ring-baseText ring-opacity-5 focus:outline-none">
           <div className="py-2">
-            {ZodiacSigns.map((zodiac) => {
-              return (
-                <Menu.Item key={zodiac.name}>
-                  {({ active }) => (
-                    <option
-                      value={zodiac.name}
-                      className={classNames(
-                        active
-                          ? 'uppercase bg-accentText text-white'
-                          : 'text-accentText uppercase',
-                        'px-4 py-2 text-sm cursor-pointer font-semibold',
-                      )}
-                      onClick={() => {
-                        onChange(zodiac.name)
-                      }}
-                    >
-                      {zodiac.name}
-                    </option>
-                  )}
-                </Menu.Item>
-              )
-            })}
+            {ZodiacSigns.map((zodiac) => (
+              <div
+                key={zodiac.name}
+                className={`${
+                  value === zodiac.name
+                    ? 'uppercase bg-accentText text-white'
+                    : 'text-accentText uppercase'
+                } px-4 py-2 text-sm cursor-pointer font-semibold`}
+                onClick={() => handleOptionClick(zodiac.name)}
+              >
+                {zodiac.name}
+              </div>
+            ))}
           </div>
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  )
+        </div>
+      )}
+    </div>
+  );
 }
+
+export default DropDown;
