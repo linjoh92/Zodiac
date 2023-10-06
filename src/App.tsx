@@ -6,6 +6,7 @@ import Layout from './pages/Layout'
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import HoroscopePage from './pages/HoroscopePage'
+import FilenotFound from './pages/FileNotFound'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/compatibility" element={<CompatibilityPage />} />
           <Route path="/horoscope" element={<HoroscopePage />} />
         </Route>
+        <Route path="/*" element={<FilenotFound />} />
       </Routes>
     </>
   )
